@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardBackgroundColor"
+    android:padding="@dimen/_15sdp"
+    android:clickable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".view.fragment.VehicleDetailFragment"
+    android:focusable="true">
+
+    <TextView
+        android:id="@+id/titleVin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/vin"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/vin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_vertical"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/titleVin"
+        app:layout_constraintStart_toStartOf="@id/makeModel"
+        app:layout_constraintTop_toTopOf="@id/titleVin"
+        tools:text="uisndjs" />
+    <!--make and model-->
+    <TextView
+        android:id="@+id/titlemake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/make_and_model"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleVin" />
+
+    <TextView
+        android:id="@+id/makeModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_8sdp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_vertical"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/titlemake"
+        app:layout_constraintStart_toEndOf="@id/titlemake"
+        app:layout_constraintTop_toTopOf="@id/titlemake"
+        tools:text="uisndjs" />
+    <!--color-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/titlecolor"
+        android:layout_marginTop="@dimen/_6sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titlemake"
+        android:text="@string/color"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="14sp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/color"
+        app:layout_constraintStart_toStartOf="@id/makeModel"
+        app:layout_constraintTop_toTopOf="@id/titlecolor"
+        app:layout_constraintBottom_toBottomOf="@id/titlecolor"
+        tools:text="uisndjs"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_vertical"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="14sp"
+        />
+    <!--car type-->
+    <TextView
+        android:id="@+id/titletype"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:fontFamily="sans-serif-black"
+        android:text="@string/car_type"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titlecolor" />
+
+    <TextView
+        android:id="@+id/carType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center_vertical"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@id/titletype"
+        app:layout_constraintStart_toStartOf="@id/makeModel"
+        app:layout_constraintTop_toTopOf="@id/titletype"
+        tools:text="uisndjs" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

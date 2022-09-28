@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Assignment IBM</string>
+    <string name="enter_number_of_movies">Enter Number of Movies</string>
+    <string name="submit">Submit</string>
+    <string name="vehicle_id">Vehicle Id:</string>
+    <string name="make_and_model">Make and Model:</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="vin">VIN:</string>
+    <string name="color">Color:</string>
+    <string name="car_type">Car Type:</string>
+</resources>

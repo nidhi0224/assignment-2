@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_5sdp"
+    app:cardElevation="@dimen/_5sdp"
+    app:cardBackgroundColor="@color/cardBackgroundColor"
+    android:layout_margin="@dimen/_10sdp">
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:padding="@dimen/_9sdp">
+
+    <TextView
+        android:id="@+id/titleVehicle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/primaryTextColor"
+        android:text="@string/vehicle_id"
+        android:textSize="@dimen/_12sdp"/>
+
+    <TextView
+        android:id="@+id/vehicleId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/titleVehicle"
+        app:layout_constraintStart_toEndOf="@id/titleVehicle"
+        app:layout_constraintTop_toTopOf="@id/titleVehicle"
+        tools:text="2344" />
+    <!--make and model-->
+    <TextView
+        android:id="@+id/titleMake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textColor="@color/primaryTextColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleVehicle"
+        android:text="@string/make_and_model"
+        android:textSize="@dimen/_12sdp"/>
+
+    <TextView
+        android:id="@+id/makeModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="@id/titleMake"
+        app:layout_constraintStart_toEndOf="@id/titleMake"
+        app:layout_constraintTop_toTopOf="@id/titleMake"
+        tools:text="Buick Riveria"
+        android:textStyle="bold"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
