@@ -1,5 +1,7 @@
 # assignment-2
 
+Following Points completed:
+
 Screen 1 - Vehicle List 
 
 1. Display an input field and a button 
