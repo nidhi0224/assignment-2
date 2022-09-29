@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Assignment IBM</string>
-    <string name="enter_number_of_movies">Enter Number of Movies</string>
+    <string name="enter_number_of_vehicle">Enter Number of Vehiles</string>
     <string name="submit">Submit</string>
     <string name="vehicle_id">Vehicle Id:</string>
     <string name="make_and_model">Make and Model:</string>
@@ -9,4 +9,10 @@
     <string name="vin">VIN:</string>
     <string name="color">Color:</string>
     <string name="car_type">Car Type:</string>
+    <string name="empty_input">Please enter a valid number</string>
+    <string name="validate_input">Value must be between 1 and 100</string>
+    <string name="carbon_emission_data">Carbon Emission Data</string>
+    <string name="kilometer_travelled">Kilometer Travelled:</string>
+    <string name="total_carbon_emission">Total Carbon Emission:</string>
+    <string name="show_carbon_emission">Show Carbon Emission</string>
 </resources>

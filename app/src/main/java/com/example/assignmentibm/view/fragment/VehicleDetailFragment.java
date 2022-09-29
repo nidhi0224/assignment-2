@@ -17,6 +17,8 @@ import com.example.assignmentibm.databinding.FragmentVehicleDetailBinding;
 import com.example.assignmentibm.model.VehicleModel;
 import com.example.assignmentibm.view.activity.MainActivity;
 
+import java.io.Serializable;
+
 
 public class VehicleDetailFragment extends Fragment {
 
@@ -59,6 +61,16 @@ public class VehicleDetailFragment extends Fragment {
             fragmentVehicleDetailBinding.color.setText(vehicleModel.getColor());
             fragmentVehicleDetailBinding.carType.setText(vehicleModel.getCarType());
         }
+        fragmentVehicleDetailBinding.btnEmission.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putInt("kilometers", vehicleModel.getKilometrage());
+                BottomSheetEmission bottomSheetEmission = new BottomSheetEmission();
+                bottomSheetEmission.setArguments(bundle);
+                bottomSheetEmission.show(getChildFragmentManager(), BottomSheetEmission.TAG);
+            }
+        });
     }
 
     @Override

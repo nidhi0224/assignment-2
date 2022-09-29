@@ -5,20 +5,24 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.assignmentibm.R;
 import com.example.assignmentibm.databinding.ActivityMainBinding;
 import com.example.assignmentibm.model.VehicleModel;
+import com.example.assignmentibm.utils.Utils;
 import com.example.assignmentibm.view.adapter.VehicleListAdapter;
 import com.example.assignmentibm.view.fragment.VehicleDetailFragment;
 import com.example.assignmentibm.view.viewmodel.VehicleViewModel;
 
-import java.util.Collections;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements VehicleListAdapter.VehicleListener {
@@ -39,11 +43,11 @@ public class MainActivity extends AppCompatActivity implements VehicleListAdapte
         vehicleViewModel=  new ViewModelProvider(this).get(VehicleViewModel.class);
         setRecyclerView();
         setObserver();
+        swipeToRefresh();
         activityMainBinding.btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                size = activityMainBinding.edtInput.getText().toString();
-                vehicleViewModel.callVehiclesList(size);
+                callVehicleApi();
             }
         });
 
@@ -65,6 +69,12 @@ public class MainActivity extends AppCompatActivity implements VehicleListAdapte
                 }
             }
         });
+        vehicleViewModel.errorMsg().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                Toast.makeText(mContext, s, Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
     private void setRecyclerView(){
@@ -75,6 +85,22 @@ public class MainActivity extends AppCompatActivity implements VehicleListAdapte
 
     }
 
+    private void callVehicleApi(){
+        Utils.getInstance().hideKeyBoard(this);
+        if(validate()){
+            size = activityMainBinding.edtInput.getText().toString();
+            vehicleViewModel.callVehiclesList(size);
+        }
+    }
+    private void swipeToRefresh(){
+        activityMainBinding.refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                activityMainBinding.refreshLayout.setRefreshing(false);
+                callVehicleApi();
+            }
+        });
+    }
     @Override
     public void onClickVehicle(VehicleModel model) {
         Bundle bundle = new Bundle();
@@ -94,4 +120,17 @@ public class MainActivity extends AppCompatActivity implements VehicleListAdapte
             super.onBackPressed();
         }
     }
+    private boolean validate(){
+        if(TextUtils.isEmpty(activityMainBinding.edtInput.getText().toString())){
+            Toast.makeText(mContext, getResources().getString(R.string.empty_input), Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        if(Integer.parseInt(activityMainBinding.edtInput.getText().toString())<1 ||
+                Integer.parseInt(activityMainBinding.edtInput.getText().toString())>100){
+            Toast.makeText(mContext, getResources().getString(R.string.validate_input), Toast.LENGTH_SHORT).show();
+            return false;
+        }
+        return true;
+    }
+
 }

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/_15sdp"
+    app:layout_behavior="@string/bottom_sheet_behavior"
+    android:id="@+id/bottomSheet"
+    android:background="@color/white"
+    app:behavior_peekHeight="0dp"
+    app:behavior_hideable="true">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-condensed"
+        android:includeFontPadding="false"
+        android:text="@string/carbon_emission_data"
+        android:textColor="@color/colorDarkGreyTitle"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/imgClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_5sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/title"
+        app:layout_constraintBottom_toBottomOf="@id/title"
+        android:src="@drawable/ic_close"/>
+    <View
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/viewline1"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:background="@color/primaryColor"/>
+
+    <TextView
+        android:id="@+id/titlekilometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/kilometer_travelled"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/viewline1" />
+
+    <TextView
+        android:id="@+id/kilometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/titlekilometer"
+        app:layout_constraintStart_toEndOf="@id/titlekilometer"
+        app:layout_constraintTop_toTopOf="@id/titlekilometer"
+        tools:text="2344" />
+    <!--make and model-->
+    <TextView
+        android:id="@+id/titleCarbon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/total_carbon_emission"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titlekilometer" />
+
+    <TextView
+        android:id="@+id/carbonEmission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:fontFamily="sans-serif-medium"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/titleCarbon"
+        app:layout_constraintStart_toEndOf="@id/titleCarbon"
+        app:layout_constraintTop_toTopOf="@id/titleCarbon"
+        tools:text="Buick Riveria" />
+</androidx.constraintlayout.widget.ConstraintLayout>

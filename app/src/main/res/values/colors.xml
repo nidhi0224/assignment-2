@@ -18,4 +18,5 @@
 
     <color name="primaryTextColor">#000000</color>
     <color name="cardBackgroundColor">#f9fbe7</color>
+    <color name="colorDarkGreyTitle">#656565</color>
 </resources>

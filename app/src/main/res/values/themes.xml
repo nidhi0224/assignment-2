@@ -14,7 +14,10 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="actionBarStyle">@style/Widget.MaterialComponents.ActionBar.Primary</item>
-
+        <item name="collapsingToolbarLayoutStyle">@style/CollapsingToolbar</item>
     </style>
 
+    <style name="CollapsingToolbar" parent="TextAppearance.Design.CollapsingToolbar.Expanded">
+        <item name="android:background">@color/white</item>
+    </style>
 </resources>
