@@ -26,6 +26,7 @@ public class VehicleViewModel extends ViewModel {
     private CompositeDisposable disposable;
     private ApiService mApiService= ApiClient.getClient().create(ApiService.class);
     private final MutableLiveData<Boolean> loading = new MutableLiveData<>();
+    private final MutableLiveData<String> error = new MutableLiveData<>();
     public VehicleViewModel() {
         disposable = new CompositeDisposable();
 
@@ -46,8 +47,9 @@ public class VehicleViewModel extends ViewModel {
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-                        Log.e(TAG, "onError: "+e.getMessage() );
+                        Log.e(TAG, "onError: "+e.getLocalizedMessage() );
                         loading.setValue(false);
+                        error.postValue(e.getMessage());
                     }
                 }));
     }
@@ -60,6 +62,10 @@ public class VehicleViewModel extends ViewModel {
     }
     public MutableLiveData<Boolean> loading() {
         return loading;
+    }
+
+    public MutableLiveData<String> errorMsg() {
+        return error;
     }
 
     @Override
